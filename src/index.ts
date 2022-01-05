@@ -18,18 +18,27 @@ const isMiniProgram =
 
 export const taroStorage: StorageEngine = {
   getItem(key) {
-    const promise = isMiniProgram
-      ? Promise.resolve().then(() => getStorageSync<string>(key))
-      : getStorage<string>({ key }).then(({ data }) => data);
+    let promise: Promise<string | null>;
 
-    return promise
-      .then((data) => {
+    if (isMiniProgram) {
+      try {
+        promise = Promise.resolve(getStorageSync<string>(key));
+      } catch {
+        promise = Promise.resolve(null);
+      }
+    } else {
+      promise = getStorage<string>({ key }).then(({ data }) => data);
+    }
+
+    return promise.then(
+      (data) => {
         return typeof data === 'string' ? data : null;
-      })
-      .catch(() => {
+      },
+      () => {
         // 使用getStorage()找不到key时，Taro会抛出异常: getStorage:fail data not found
         return null;
-      });
+      },
+    );
   },
   setItem(key, value) {
     return setStorage({
