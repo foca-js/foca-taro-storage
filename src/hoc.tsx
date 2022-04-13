@@ -1,17 +1,20 @@
 import { store } from 'foca';
-import React, { ComponentType, useEffect, useState, forwardRef } from 'react';
+import hoistStatics from 'hoist-non-react-statics';
+import React, { ComponentType, useEffect, useState, FC } from 'react';
 
-// TODO: 支持ref的类型
+// 路由入口没有ref的需求，所以不需要增加forwardRef
 export function persistInterceptor<T>(EntryComponent: ComponentType<T>) {
-  const [ready, setReady] = useState(false);
+  const HOC: FC<T> = (props) => {
+    const [ready, setReady] = useState(false);
 
-  return forwardRef<unknown, T>((props, ref) => {
     useEffect(() => {
       store.onInitialized().then(() => {
         setReady(true);
       });
     });
 
-    return ready ? <EntryComponent {...props} ref={ref} /> : null;
-  });
+    return ready ? <EntryComponent {...props} /> : null;
+  };
+
+  return hoistStatics(HOC, EntryComponent);
 }

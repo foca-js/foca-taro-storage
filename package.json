@@ -43,5 +43,8 @@
     "husky": "^7.0.4",
     "ts-prepublish": "^2.0.0",
     "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "hoist-non-react-statics": "^3.3.2"
   }
 }
