@@ -1,3 +1,7 @@
+## [0.1.2](https://github.com/foca-js/foca-taro-storage/compare/v0.1.1...v0.1.2)&nbsp;&nbsp;(2022-04-13)
+
+- 忘记添加 hooks 依赖
+
 ## [0.1.1](https://github.com/foca-js/foca-taro-storage/compare/v0.1.0...v0.1.1)&nbsp;&nbsp;(2022-04-13)
 
 - 函数式组件不支持传递 ref

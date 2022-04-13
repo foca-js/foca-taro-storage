@@ -1,8 +1,8 @@
 {
   "name": "foca-taro-storage",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": "git@github.com:foca-js/foca-taro-storage.git",
-  "author": "fwh1990",
+  "author": "geekact",
   "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.js",
