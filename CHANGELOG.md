@@ -1,3 +1,7 @@
+## [0.1.1](https://github.com/foca-js/foca-taro-storage/compare/v0.1.0...v0.1.1)&nbsp;&nbsp;(2022-04-13)
+
+- 函数式组件不支持传递 ref
+
 ## [0.1.0](https://github.com/foca-js/foca-taro-storage/compare/v0.0.3...v0.1.0)&nbsp;&nbsp;(2022-04-13)
 
 - 增加路由入口拦截器，彻底解决小程序在真机上找不到首页
