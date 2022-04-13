@@ -11,7 +11,7 @@ export function persistInterceptor<T>(EntryComponent: ComponentType<T>) {
       store.onInitialized().then(() => {
         setReady(true);
       });
-    });
+    }, []);
 
     return ready ? <EntryComponent {...props} /> : null;
   };
