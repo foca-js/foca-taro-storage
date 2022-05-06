@@ -1,3 +1,7 @@
+## [0.1.3](https://github.com/foca-js/foca-taro-storage/compare/v0.1.2...v0.1.3)&nbsp;&nbsp;(2022-05-06)
+
+- 使用兼容性更好的文件打包方式
+
 ## [0.1.2](https://github.com/foca-js/foca-taro-storage/compare/v0.1.1...v0.1.2)&nbsp;&nbsp;(2022-04-13)
 
 - 忘记添加 hooks 依赖
