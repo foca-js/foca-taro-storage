@@ -3,7 +3,7 @@
     // https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping
     "target": "ES2015",
     "module": "ES2015",
-    "lib": ["ESNext", "DOM"],
+    "lib": ["ESNext"],
     "allowJs": false,
     "declaration": true,
     "outDir": "./build",
@@ -29,7 +29,6 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "typeRoots": ["node_modules/@types", "./typings"],
 
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,

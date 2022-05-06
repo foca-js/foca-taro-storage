@@ -2,24 +2,32 @@
   "name": "foca-taro-storage",
   "version": "0.1.2",
   "repository": "git@github.com:foca-js/foca-taro-storage.git",
-  "author": "geekact",
+  "keywords": [
+    "taro-persist",
+    "taro-storage"
+  ],
+  "description": "Foca持久化taro引擎",
+  "contributors": [
+    "罪 <fanwenhua1990@gmail.com> (https://github.com/geekact)"
+  ],
   "license": "MIT",
-  "main": "lib/index.js",
-  "module": "es/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "prepublishOnly": "ts-prepublish",
+    "prepublishOnly": "tsup",
     "prepare": "husky install"
   },
   "exports": {
     ".": {
-      "require": "./lib/index.js",
-      "import": "./es/index.js"
-    },
-    "./": "./"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
   },
   "files": [
-    "lib",
-    "es",
+    "dist",
+    "src",
     "LICENSE",
     "package.json",
     "README.md",
@@ -31,20 +39,24 @@
     ]
   },
   "peerDependencies": {
-    "foca": "^0.9.0",
-    "taro": "^3.0.0"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^16.0.1",
-    "@commitlint/config-conventional": "^16.0.0",
-    "@tarojs/taro": "^3.3.19",
-    "@types/node": "^17.0.8",
-    "foca": "^0.9.2",
-    "husky": "^7.0.4",
-    "ts-prepublish": "^2.0.0",
-    "typescript": "^4.5.4"
+    "@tarojs/taro": "^3.0.0",
+    "foca": ">=0.11.0",
+    "react": ">=16.9.0"
   },
   "dependencies": {
     "hoist-non-react-statics": "^3.3.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4",
+    "@swc/core": "^1.2.177",
+    "@tarojs/taro": "^3.4.8",
+    "@types/node": "^17.0.31",
+    "foca": "^0.11.1",
+    "husky": "^7.0.4",
+    "prettier": "^2.6.2",
+    "react": "^18.1.0",
+    "tsup": "^5.12.7",
+    "typescript": "^4.6.4"
   }
 }

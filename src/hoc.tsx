@@ -5,12 +5,13 @@ import React, { ComponentType, useEffect, useState, FC } from 'react';
 // 路由入口没有ref的需求，所以不需要增加forwardRef
 export function persistInterceptor<T>(EntryComponent: ComponentType<T>) {
   const HOC: FC<T> = (props) => {
-    const [ready, setReady] = useState(false);
+    const [ready, setReady] = useState(store.isReady);
 
     useEffect(() => {
-      store.onInitialized().then(() => {
-        setReady(true);
-      });
+      ready ||
+        store.onInitialized().then(() => {
+          setReady(true);
+        });
     }, []);
 
     return ready ? <EntryComponent {...props} /> : null;
