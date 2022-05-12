@@ -1,3 +1,7 @@
+## [0.1.4](https://github.com/foca-js/foca-taro-storage/compare/v0.1.3...v0.1.4)&nbsp;&nbsp;(2022-05-13)
+
+- 使用`.js`文件以适配旧的打包工具
+
 ## [0.1.3](https://github.com/foca-js/foca-taro-storage/compare/v0.1.2...v0.1.3)&nbsp;&nbsp;(2022-05-06)
 
 - 使用兼容性更好的文件打包方式
