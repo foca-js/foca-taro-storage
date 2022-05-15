@@ -1,3 +1,8 @@
+## [1.0.0](https://github.com/foca-js/foca-taro-storage/compare/v0.1.4...v1.0.0)&nbsp;&nbsp;(2022-05-16)
+
+- 彻底解决持久化慢于 taro 寻找节点的问题 (https://github.com/NervJS/taro/issues/6548)
+- 删除高阶组件`persistInterceptor`
+
 ## [0.1.4](https://github.com/foca-js/foca-taro-storage/compare/v0.1.3...v0.1.4)&nbsp;&nbsp;(2022-05-13)
 
 - 使用`.js`文件以适配旧的打包工具
