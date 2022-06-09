@@ -30,10 +30,36 @@ Component.prototype.forceUpdate = function (
     callback &&
       (() => {
         if (store.isReady) {
-          callback();
+          loopCallback(callback, 0);
         } else {
-          store.onInitialized().then(callback);
+          store.onInitialized().then(() => {
+            loopCallback(callback, 0);
+          });
         }
       }),
   );
 };
+
+/**
+ * 此时 <PersistGate /> 组件刚执行完setState，仍需一定的时间去才能真正渲染出业务组件
+ * 至于需要多长时间，没有办法判断，需要根据入口页的复杂度
+ * 所以立即执行callback有一定概率导致 '没有找到页面实例' 的情况出现
+ */
+function loopCallback(callback: () => void, retryTimes: number) {
+  setTimeout(() => {
+    try {
+      callback();
+    } catch (e) {
+      const shouldRetry =
+        retryTimes < 5 &&
+        e instanceof Error &&
+        e.message.indexOf('页面实例') !== -1;
+
+      if (shouldRetry) {
+        loopCallback(callback, retryTimes + 1);
+      } else {
+        throw e;
+      }
+    }
+  }, retryTimes * 5);
+}
