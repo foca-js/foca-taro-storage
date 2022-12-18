@@ -9,7 +9,12 @@ taro 端的持久化引擎。
 # 安装
 
 ```bash
+# npm
+npm install foca-taro-storage
+# yarn
 yarn add foca-taro-storage
+# pnpm
+pnpm add foca-taro-storage
 ```
 
 # 使用
