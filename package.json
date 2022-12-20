@@ -56,6 +56,7 @@
     "@swc/core": "^1.3.23",
     "@tarojs/taro": "^3.5.10",
     "@types/node": "^18.11.17",
+    "@types/react": "^18.0.26",
     "foca": "^1.3.0",
     "husky": "^8.0.2",
     "prettier": "^2.8.1",
