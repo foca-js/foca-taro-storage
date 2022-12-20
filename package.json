@@ -1,6 +1,6 @@
 {
   "name": "foca-taro-storage",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "repository": "git@github.com:foca-js/foca-taro-storage.git",
   "keywords": [
     "redux-persist",

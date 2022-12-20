@@ -1,3 +1,9 @@
+## [1.0.4](https://github.com/foca-js/foca-taro-storage/compare/v1.0.3...v1.0.4)&nbsp;&nbsp;(2022-12-20)
+
+- 最低 taro 版本要求降回 `3.0.0`
+- 导出 `package.json` 文件
+- 修复 package.json 中部分字段
+
 ## [1.0.3](https://github.com/foca-js/foca-taro-storage/compare/v1.0.0...v1.0.3)&nbsp;&nbsp;(2022-06-09)
 
 - 需等待持久化组件重渲染完成，否则 taro 仍然无法找到根节点
